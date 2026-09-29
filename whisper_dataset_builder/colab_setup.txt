@@ -1,0 +1,8 @@
+!apt-get -qq update
+!apt-get -qq install -y ffmpeg
+%cd /content/whisper_dataset_builder_v2
+!pip install -q -r requirements.txt
+!streamlit run app.py --server.port 8501 --server.address 0.0.0.0 > /content/streamlit.log 2>&1 &
+!wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 -O /content/cloudflared
+!chmod +x /content/cloudflared
+!/content/cloudflared tunnel --url http://localhost:8501
