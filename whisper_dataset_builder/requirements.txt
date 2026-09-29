@@ -1,0 +1,9 @@
+streamlit>=1.64,<1.65
+faster-whisper>=1.2
+torch>=2.2
+torchaudio>=2.2
+numpy>=1.26
+pandas>=2.2
+librosa>=0.10
+soundfile>=0.12
+scipy>=1.11
